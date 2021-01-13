@@ -71,7 +71,6 @@ int main ( void )
       return CU_get_error();
    }
    CU_automated_run_tests();
-   CU_list_tests_to_file();
    // Run all tests using the basic interface
   
 /*
