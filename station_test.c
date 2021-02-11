@@ -4,7 +4,7 @@
 //#include "CUnit/Console.h"
 
 #include "station.h"
-#define TAB[10] = {10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0};
+#define TAB [10] = {10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0};
 #include <stdio.h>  // for printf
 
 /* Test Suite setup and cleanup functions: */
