@@ -37,6 +37,10 @@ void aberrant_test(void) {
  CU_ASSERT_EQUAL( nb_valeurs_aberrantes(34.0,20.0,22.0), 1);
  CU_ASSERT_EQUAL( nb_valeurs_aberrantes(20.0,31.0,48.0), 2);
 }
+void pollution_test(void) {
+  CU_ASSERT_EQUAL( detection_pic(20.0,22.0,24.0),0);
+  CU_ASSERT_EQUAL( detection_pic(1.0,20.0,40.0), 1);
+}
 void controller_test(void) {
   CU_ASSERT_DOUBLE_EQUAL( controlleur(20.0,22.0,24.0), 22.0,1.0);
   CU_ASSERT_DOUBLE_EQUAL( controlleur(40.0,20.0,22.0), 25.0,1.0);
@@ -60,7 +64,9 @@ int main ( void )
 
    /* add the tests to the suite */
    if ( (NULL == CU_add_test(pSuite, "moyenne_test", moyenne_test)) ||
-        (NULL == CU_add_test(pSuite, "aberrant_test", aberrant_test))
+        (NULL == CU_add_test(pSuite, "aberrant_test", aberrant_test)) ||
+        (NULL == CU_add_test(pSuite, "pollution_test", pollution_test))
+
       )
    {
       CU_cleanup_registry();
