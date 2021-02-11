@@ -39,7 +39,7 @@ void aberrant_test(void) {
 }
 
 void pollution_test(void) {
-  float* tab[10];
+  float tab[10];
    for(int i = 0;i<10;i++){
      tab[i] = 20;
   }
