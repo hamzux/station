@@ -4,7 +4,7 @@
 //#include "CUnit/Console.h"
 
 #include "station.h"
-
+#define TAB[10] = {10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0};
 #include <stdio.h>  // for printf
 
 /* Test Suite setup and cleanup functions: */
@@ -39,12 +39,9 @@ void aberrant_test(void) {
 }
 
 void pollution_test(void) {
-  float tab[10];
-   for(int i = 0;i<10;i++){
-     tab[i] = 20;
-  }
-  CU_ASSERT_EQUAL( detection_pic(&tab,22.0),0);
-  CU_ASSERT_EQUAL( detection_pic(&tab,40.0), 1);
+
+  CU_ASSERT_EQUAL( detection_pic(TAB,12.0),0);
+  CU_ASSERT_EQUAL( detection_pic(TAB,40.0), 1);
 }
 
 /************* Test Runner Code goes here **************/
