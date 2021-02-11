@@ -34,16 +34,12 @@ void moyenne_test(void) {
 
 void aberrant_test(void) {
  CU_ASSERT_EQUAL( nb_valeurs_aberrantes(20.0,22.0,24.0), 0);
- CU_ASSERT_EQUAL( nb_valeurs_aberrantes(40.0,20.0,22.0), 1);
- CU_ASSERT_EQUAL( nb_valeurs_aberrantes(20.0,30.0,40.0), 2);
+ CU_ASSERT_EQUAL( nb_valeurs_aberrantes(34.0,20.0,22.0), 1);
+ CU_ASSERT_EQUAL( nb_valeurs_aberrantes(20.0,31.0,48.0), 2);
 }
 void controller_test(void) {
-  CU_ASSERT_DOUBLE_EQUAL( controlleur(20.0,22.0,24.0), 22.0,0.1);
-  CU_ASSERT_DOUBLE_EQUAL( controlleur(40.0,20.0,22.0), 21.0,0.1);
-  CU_ASSERT_DOUBLE_EQUAL( controlleur(20.0,30.0,40.0), -200.0,0.1);
-  CU_ASSERT_DOUBLE_EQUAL( controlleur(20.0,40.0,60.0), -100.0,0.1);
-
-
+  CU_ASSERT_DOUBLE_EQUAL( controlleur(20.0,22.0,24.0), 22.0,1.0);
+  CU_ASSERT_DOUBLE_EQUAL( controlleur(40.0,20.0,22.0), 25.0,1.0);
 }
 /************* Test Runner Code goes here **************/
 
@@ -70,9 +66,13 @@ int main ( void )
       CU_cleanup_registry();
       return CU_get_error();
    }
-   CU_automated_run_tests();
+
    // Run all tests using the basic interface
-  
+   CU_basic_set_mode(CU_BRM_VERBOSE);
+   CU_basic_run_tests();
+   printf("\n");
+   CU_basic_show_failures(CU_get_failure_list());
+   printf("\n\n");
 /*
    // Run all tests using the automated interface
    CU_automated_run_tests();
