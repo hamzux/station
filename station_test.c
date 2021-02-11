@@ -3,6 +3,7 @@
 //#include "CUnit/Automated.h"
 //#include "CUnit/Console.h"
 
+#include "station.h"
 
 #include <stdio.h>  // for printf
 
