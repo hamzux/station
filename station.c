@@ -1,7 +1,9 @@
 // Online C compiler to run C program online
 #include <stdio.h>
+#include "station.h"
 #include <stdlib.h>
 #include <stdbool.h>  
+
 #define N_MESURE 20
 #define TAILLE_MAX 100 // 
 
