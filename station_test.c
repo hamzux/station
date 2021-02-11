@@ -37,9 +37,13 @@ void aberrant_test(void) {
  CU_ASSERT_EQUAL( nb_valeurs_aberrantes(34.0,20.0,22.0), 1);
  CU_ASSERT_EQUAL( nb_valeurs_aberrantes(20.0,31.0,48.0), 2);
 }
+float tab[10];
+for(int i = 0;i<10;i++){
+  tab[i] = 20;
+}
 void pollution_test(void) {
-  CU_ASSERT_EQUAL( detection_pic(20.0,22.0,24.0),0);
-  CU_ASSERT_EQUAL( detection_pic(1.0,20.0,40.0), 1);
+  CU_ASSERT_EQUAL( detection_pic(tab,22.0),0);
+  CU_ASSERT_EQUAL( detection_pic(tab,40.0), 1);
 }
 
 /************* Test Runner Code goes here **************/
