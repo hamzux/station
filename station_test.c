@@ -41,10 +41,7 @@ void pollution_test(void) {
   CU_ASSERT_EQUAL( detection_pic(20.0,22.0,24.0),0);
   CU_ASSERT_EQUAL( detection_pic(1.0,20.0,40.0), 1);
 }
-void controller_test(void) {
-  CU_ASSERT_DOUBLE_EQUAL( controlleur(20.0,22.0,24.0), 22.0,1.0);
-  CU_ASSERT_DOUBLE_EQUAL( controlleur(40.0,20.0,22.0), 25.0,1.0);
-}
+
 /************* Test Runner Code goes here **************/
 
 int main ( void )
